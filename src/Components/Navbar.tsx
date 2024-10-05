@@ -1,5 +1,5 @@
 import { BiLogoGmail } from "react-icons/bi";
-import { FaLinkedinIn } from "react-icons/fa";
+import { FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 import { LuGithub } from "react-icons/lu";
 import { MdOutlinePhone } from "react-icons/md";
 
@@ -45,6 +45,11 @@ export default function Navbar() {
         <li className="nav-item">
         <a href="tel:+20 155 956 6765" target="_blank" className="icon">
           <MdOutlinePhone />
+        </a>
+        </li>
+        <li className="nav-item">
+        <a href="https://wa.me/201559566765" target="_blank">
+        <FaWhatsapp />
         </a>
         </li>
       </ul>
