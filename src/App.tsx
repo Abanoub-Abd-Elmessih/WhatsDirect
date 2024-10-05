@@ -1,14 +1,15 @@
-import Background from "./Components/Background/Background"
-import InputsField from "./Components/InputsField/InputsField"
+import Contact from "./Components/Contact"
+import Navbar from "./Components/Navbar"
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
+
   return (
-  <>
-  <div className="container flex justify-center items-center min-h-svh">
-    <InputsField/>
-  </div>
-    <Background/>
-  </>
+    <div className='app min-vh-100'>
+      <Navbar/>
+      <Contact />
+    </div>
   )
 }
 

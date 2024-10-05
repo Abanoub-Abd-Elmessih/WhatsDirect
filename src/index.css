@@ -1,3 +1,35 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.app{
+  background: rgb(6,125,104);
+  background: linear-gradient(35deg, rgba(6,125,104,1) 24%, rgba(33,101,158,0.8743872549019608) 50%, rgba(47,158,133,0.9500175070028011) 75%);
+}
+.heading{
+  width: fit-content;
+  font-size: 25px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid white;
+}
+/* Add this CSS to your stylesheet */
+.react-tel-input .form-control:focus {
+  border-color: #67e2bd; /* Change this to the shade of green you prefer */
+  box-shadow: 0 0 0 0.2rem rgba(210, 219, 212, 0.25); /* Optional: Add a shadow effect */
+}
+
+  .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa;
+    color: #343a40;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    border: 2px solid #343a40;
+  }
+  
+  .icon:hover {
+    background-color: #343a40;
+    color: #f8f9fa;
+  }
+  
