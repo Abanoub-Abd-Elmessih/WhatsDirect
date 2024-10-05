@@ -1,50 +1,41 @@
-# React + TypeScript + Vite
+# Whats Direct
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the Whats Direct project! This web application allows users to initiate WhatsApp chats with people without needing to save their numbers, saving time and enhancing convenience. It is designed for international use, making it accessible to users worldwide.
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Check out the live version of the project [here](https://whats-direct-alpha.vercel.app/).
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Open Chats without Saving Numbers**: Easily start a chat with any WhatsApp user by entering their number without saving it to your contacts.
+- **Time-Saving Solution**: Designed to streamline the process of initiating conversations on WhatsApp.
+- **International Support**: Works seamlessly with international phone numbers, making it accessible to users around the globe.
+- **User-friendly Interface**: A clean and intuitive design for easy navigation.
+- **Responsive Design**: Optimized for mobile and desktop devices.
+- **Fast Performance**: Built with performance in mind to ensure a smooth user experience.
 
-- Configure the top-level `parserOptions` property like this:
+## Technologies Used
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **React**: A JavaScript library for building user interfaces.
+- **TypeScript**: A superset of JavaScript that adds static typing for better development experience.
+- **Bootstrap**: A popular CSS framework for responsive web design.
+- **Vite**: A fast development environment for modern web projects.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Getting Started
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+To get a local copy up and running, follow these steps:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### Prerequisites
+
+Make sure you have the following installed:
+
+- Node.js (version 14 or later)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/whats-direct-alpha.git
