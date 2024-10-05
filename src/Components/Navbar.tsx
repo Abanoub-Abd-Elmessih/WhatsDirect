@@ -48,7 +48,7 @@ export default function Navbar() {
         </a>
         </li>
         <li className="nav-item">
-        <a href="https://wa.me/201559566765" target="_blank">
+        <a href="https://wa.me/201559566765" target="_blank" className="icon">
         <FaWhatsapp />
         </a>
         </li>
