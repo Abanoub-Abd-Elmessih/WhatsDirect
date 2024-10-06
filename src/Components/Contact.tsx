@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FiMessageCircle } from "react-icons/fi";
 import PhoneInput from "react-phone-input-2";
 import 'react-phone-input-2/lib/style.css';
@@ -9,8 +9,28 @@ export default function Contact() {
 
   const handlePhoneNumberChange = (value: string) => {
     setPhoneNumber(value);
-    setError(''); 
+    setError('');
   };
+
+  // Geolocation logic inside useEffect
+  useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        function (position) {
+          const latitude = position.coords.latitude;
+          const longitude = position.coords.longitude;
+          console.log(`User's location: Latitude ${latitude}, Longitude ${longitude}`);
+        },
+        function (error) {
+          if (error.code === error.PERMISSION_DENIED) {
+            console.log('Geolocation permission denied. Using default location.');
+          }
+        }
+      );
+    } else {
+      alert('Geolocation is not supported by this browser.');
+    }
+  }, []); // This effect runs once, when the component mounts
 
   const openWhatsAppChat = () => {
     const formattedNumber = phoneNumber.replace(/\D/g, '');
@@ -21,12 +41,12 @@ export default function Contact() {
       const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
       
       // WhatsApp link
-      const whatsappURL = isMobile 
-        ? `whatsapp://send?phone=${formattedNumber}`  
+      const whatsappURL = isMobile
+        ? `whatsapp://send?phone=${formattedNumber}`
         : `https://wa.me/${formattedNumber}`;
 
-      window.open(whatsappURL, '_blank'); 
-      setPhoneNumber('')
+      window.open(whatsappURL, '_blank');
+      setPhoneNumber('');
     } else {
       setError('Please enter a valid phone number.');
     }
