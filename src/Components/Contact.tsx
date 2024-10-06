@@ -26,6 +26,7 @@ export default function Contact() {
         : `https://wa.me/${formattedNumber}`;
 
       window.open(whatsappURL, '_blank'); 
+      setPhoneNumber('')
     } else {
       setError('Please enter a valid phone number.');
     }
