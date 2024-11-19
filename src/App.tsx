@@ -2,32 +2,33 @@
 import React, { useState, useEffect } from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
 import { FiSend } from 'react-icons/fi';
-import PhoneInput from 'react-phone-number-input';
+import PhoneInput, { Country } from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 
 function App() {
   const [phoneNumber, setPhoneNumber] = useState('');
-  const [lastCountry, setLastCountry] = useState('EG');
+  const [lastCountry, setLastCountry] = useState<Country>('EG');
 
   useEffect(() => {
     const savedCountry = localStorage.getItem('lastCountry');
     if (savedCountry) {
-      setLastCountry(savedCountry);
+      setLastCountry(savedCountry as Country);
     }
   }, []);
 
-function handleCountryChange (country: string) {
-  setLastCountry(country);
-  localStorage.setItem('lastCountry', country);
-};
-
+  const handleCountryChange = (country?: Country) => {
+    if (country) {
+      setLastCountry(country);
+      localStorage.setItem('lastCountry', country);
+    }
+  };
 
   const handleWhatsAppRedirect = (e: React.FormEvent) => {
     e.preventDefault();
     if (phoneNumber) {
       const cleanNumber = phoneNumber.replace(/\D/g, '');
       window.open(`https://wa.me/${cleanNumber}`, '_blank');
-      setPhoneNumber('')
+      setPhoneNumber('');
     }
   };
 
@@ -54,7 +55,7 @@ function handleCountryChange (country: string) {
             </label>
             <PhoneInput
               international
-              defaultCountry={lastCountry as any}
+              defaultCountry={lastCountry}
               value={phoneNumber}
               onChange={(value) => setPhoneNumber(value || '')}
               onCountryChange={handleCountryChange}
