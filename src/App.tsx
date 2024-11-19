@@ -16,10 +16,11 @@ function App() {
     }
   }, []);
 
-  const handleCountryChange = (country: string) => {
-    setLastCountry(country);
-    localStorage.setItem('lastCountry', country);
-  };
+function handleCountryChange (country: string) {
+  setLastCountry(country);
+  localStorage.setItem('lastCountry', country);
+};
+
 
   const handleWhatsAppRedirect = (e: React.FormEvent) => {
     e.preventDefault();
